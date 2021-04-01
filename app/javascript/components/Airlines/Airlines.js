@@ -4,15 +4,19 @@ import axios from 'axios'
 const Airlines = () => {
   const [airlines, setAirlines] = useState([])
 
-  useEffect(() => {
-    axios.get('api/v1/airlines.json')
+  useEffect( () => {
+    axios.get('/api/v1/airlines.json')
     .then( resp => {
-      debugger
+      setAirlines(resp.data.data)
     })
     .catch( data => {
       debugger
     })
   }, [])
+
+  const grid = airlines.map( (airline, index) => {
+    return (<li key={index} >{airline.attributes.name}</li>)
+  })
 
   return(
     <div className="home">
@@ -21,7 +25,9 @@ const Airlines = () => {
       <p className="subheader">Honest, unbiased airline reviews. Share your experience.</p>
     </div>
     <div className="grid">
-      {grid}
+      <ul>
+        {grid}
+      </ul>
     </div>
   </div>
   )
