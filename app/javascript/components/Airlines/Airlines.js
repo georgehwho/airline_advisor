@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const Airlines = () => {
+  const [airlines, setAirlines] = useState([])
+
+  useEffect(() => {
+    axios.get('api/v1/airlines.json')
+    .then( resp => {
+      debugger
+    })
+    .catch( data => {
+      debugger
+    })
+  }, [])
+
   return(
-    <div>This is the Airlines#index page for our app.</div>
+    <div className="home">
+    <div className="header">
+      <h1>Airline Advisor</h1>
+      <p className="subheader">Honest, unbiased airline reviews. Share your experience.</p>
+    </div>
+    <div className="grid">
+      {grid}
+    </div>
+  </div>
   )
 }
 
