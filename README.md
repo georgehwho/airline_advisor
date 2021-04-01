@@ -1,24 +1,11 @@
-# README
+# Airline Advisor
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Airline Advisor is a web application for users to create reviews for airlines.
 
-Things you may want to cover:
+Created by George Ho using Rails on the backend and React on the front end.
 
-* Ruby version
+### Technologies
+Rails Version: 5.2.5
 
-* System dependencies
+Ruby Version: 2.5.3
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
