@@ -50,7 +50,7 @@ const Airline = (props) => {
       </AirlineName>
 
       <LinkWrapper>
-        <Link to={"/" + slug}>View Airline</Link>
+        <Link to={"/airlines/" + slug}>View Airline</Link>
       </LinkWrapper>
     </Card>
   )
