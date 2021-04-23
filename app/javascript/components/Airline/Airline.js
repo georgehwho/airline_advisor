@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import Header from './Header'
+import Review from './Review'
 
 const Column = styled.div`
   background: #fff;
@@ -36,6 +37,20 @@ const Airline = (props) => {
     })
   }, [])
 
+  let reviews
+  if (airlines.included.length > 0) {
+    reviews = airlines.included.map( (review, index) => {
+      return (
+        <Review
+          key={index}
+          title={review.attributes.title}
+          description={review.attributes.description}
+          score={review.attributes.score}
+        />
+      )
+    })
+  }
+
   return(
     <div>
       <Column>
@@ -47,11 +62,11 @@ const Airline = (props) => {
         }
 
         <div className="reviews">
+          {reviews}
         </div>
-
       </Column>
       <Column>
-
+        [review form will go here]
       </Column>
     </div>
     )
