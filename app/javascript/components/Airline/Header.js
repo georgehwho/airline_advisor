@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Rating from '../Rating/Rating'
 
 
 const Wrapper = styled.div`
@@ -9,12 +10,13 @@ const Wrapper = styled.div`
 `
 
 const Header = (props) => {
-  const {name, image_url} = props.attributes
+  const {name, image_url, avg_score} = props.attributes
 
   return(
     <Wrapper>
       <img src={image_url} alt={name} width="50"/>
       <h1>{name}</h1>
+      <Rating score={avg_score}/>
     </Wrapper>
   )
 }
